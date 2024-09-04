@@ -1,7 +1,8 @@
 def is_year_leap(year):
-    if (year % 4 == 0):
-        print ("год " + str (year) + ": True")
-    else:
-        print ("год " + str (year) + ": False")
+    return "True" if year % 4 == 0 else "False"
 
-is_year_leap(int(input("Введите год: ")))
+
+year_to_check = int(input("Введите год: "))
+is_leap = is_year_leap(year_to_check)  # сохраняем результат в переменную
+
+print(f"год {year_to_check}: {is_leap}")
