@@ -11,7 +11,7 @@ driver.get("http://uitestingplayground.com/textinput")
 pole_name = driver.find_element(By.CSS_SELECTOR, "#newButtonName")
 pole_name.send_keys("SkyPro")
 
-button = driver.find_element(By.CSS_SELECTOR, "#updatingButton").click()
+driver.find_element(By.CSS_SELECTOR, "#updatingButton").click()
 
 txt_button = driver.find_element(By.CSS_SELECTOR, "#updatingButton").text
 
