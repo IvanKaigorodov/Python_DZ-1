@@ -23,8 +23,7 @@ def test_create_project():
 
     response = requests.post(
         base_url+'projects', headers=my_headers, json=payload)
-    assert response.status_code == 201, f"Response Body:{
-        response.text}"
+    assert response.status_code == 201, f"Response Body:{response.text}"
     json_response = response.json()
     assert "id" in json_response
 
