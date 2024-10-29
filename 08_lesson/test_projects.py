@@ -23,8 +23,7 @@ def test_create_project():
 
     response = requests.post(
         base_url+'projects', headers=my_headers, json=payload)
-    assert response.status_code == 201, f"Response Body:{
-        response.text}"
+    assert response.status_code == 201, f"Response:{response.text}"
     json_response = response.json()
     assert "id" in json_response
 
@@ -39,8 +38,7 @@ def test_create_project_error_users():
 
     response = requests.post(
         base_url+'projects', headers=my_headers, json=payload)
-    assert response.status_code == 400, f"Response Body:{
-        response.text}"
+    assert response.status_code == 400, f"Response:{response.text}"
     json_response = response.json()
     assert "message" in json_response
 
@@ -51,8 +49,7 @@ def test_get_projects():
 
     response = requests.get(
         base_url+'projects', headers=my_headers)
-    assert response.status_code == 200, f"Response Body:{
-        response.text}"
+    assert response.status_code == 200, f"Response:{response.text}"
     json_response = response.json()
     assert isinstance(json_response.get(
         'content'), list), f"Expected list, got:{
@@ -72,8 +69,7 @@ def test_change_project():
 
     response = requests.put(
         url, headers=my_headers, json=payload)
-    assert response.status_code == 200, f"Response Body:{
-        response.text}"
+    assert response.status_code == 200, f"Response:{response.text}"
 
 
 # Изменить название проекта без данных (негативная проверка)
@@ -87,8 +83,7 @@ def test_update_project_erroe_data():
 
     response = requests.put(
         url, headers=my_headers, json=payload)
-    assert response.status_code == 400, f"Response Body:{
-        response.text}"
+    assert response.status_code == 400, f"Response:{response.text}"
     json_response = response.json()
     assert "message" in json_response
 
@@ -100,7 +95,6 @@ def test_get_project_by_id():
     my_headers = auth()
 
     response = requests.get(url, headers=my_headers)
-    assert response.status_code == 200, f"Response Body:{
-        response.text}"
+    assert response.status_code == 200, f"Response:{response.text}"
     json_response = response.json()
     assert "title" in json_response, "Новый проект ДЗ-8"
