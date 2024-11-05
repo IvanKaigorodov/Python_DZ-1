@@ -38,9 +38,9 @@ def test_del_subject():
     new_title = 'Новый предмет'
     id = 100
     db.create_title(new_title, id)
-    # Выбрать из базы новый предмет по id
-    rows = db.get_subject_del(id)
     # Удалить из базы новый предмет по id
     db.delete_id(id)
+    # Выбрать из базы новый предмет по id
+    rows = db.get_subject_del(id)
     # Проверить отсутствие предмета по id
-    assert rows == None
+    assert rows == []

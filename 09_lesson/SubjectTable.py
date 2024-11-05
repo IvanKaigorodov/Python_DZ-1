@@ -38,7 +38,7 @@ class SadjtctTable:
         db_up_title = up_title).fetchall()
     
     def get_subject_del(self, id):
-        self.db.execute(self.scripts["select by id"],
+        return self.db.execute(self.scripts["select by id"],
         db_id = id).fetchall()
 
     def create_title(self, new_title, id):
